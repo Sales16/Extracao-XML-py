@@ -65,7 +65,7 @@ Exibe informações como (Notas processadas, Notas não processadas).
             COMPRA 2019
             COMPRA XXXX
 
-3 - EXTRAIR COMPRAS - COTEPE
+* 3 - EXTRAIR COMPRAS - COTEPE
 Extrai os dados de compras dos XMLs de compras dos postos de combustiveis especificado pelo CNPJ. A extração será feita para a utilização da tabela COTEPE.
 
 Especifica o diretorio principal.
@@ -94,7 +94,7 @@ Exibe informações como (Notas processadas, Notas não processadas).
             COMPRA 2019
             COMPRA XXXX
 
-4 - GERAR RELATORIO
+* 4 - GERAR RELATORIO
 Gera um relatorio com os dados dos CSVs de cada posto, organizando essas dados e os salva em uma planilha fixa.
 
 Especifica o diretorio dos postos.
@@ -103,7 +103,7 @@ Extrai apenas os dados nescessarios para o relatorio.
 Salva os dados em uma planilha fixa.
 
 
-5 - ABRIR PLANILHAS
+* 5 - ABRIR PLANILHAS
 Abre todas as planilhas .xlsx de um diretorio especificado.
 
 Especifica o diretorio.
