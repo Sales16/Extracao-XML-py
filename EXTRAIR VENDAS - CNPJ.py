@@ -1,13 +1,13 @@
 import time
-
-tempo_inicial = time.time()
-
 import os
 import tkinter as tk
 from tkinter import filedialog
 from lxml import etree
 from openpyxl import Workbook
 from tkinter import simpledialog
+
+# Inicia a contagem do cronometro
+tempo_inicial = time.time()
 
 # Cria a janela do tkinter e a esconde
 root = tk.Tk()
@@ -23,10 +23,10 @@ ns = {
 # Define o nome das colunas da planilha
 columns = ["COMBUSTIVEL", "DATA", "NOTA", "ITEM", "V", "CODIGO", "VALOR", "QUANTIDADE"]
 
-
+# Pergunta o CNPJ do posto
+cnpj_posto = simpledialog.askstring("CNPJ", "ESPECIFIQUE O CNPJ DO POSTO")
 
 # Itera sobre todas as pastas e subpastas no diretório especificado
-cnpj_posto = simpledialog.askstring("CNPJ", "ESPECIFIQUE O CNPJ DO POSTO")
 for root, dirs, files in os.walk(folder_path):
     # Cria uma nova planilha do Excel e adiciona os cabeçalhos das colunas
     wb = Workbook()
@@ -41,16 +41,13 @@ for root, dirs, files in os.walk(folder_path):
     for filename in files:
         if filename.endswith(".xml"):
             xml_path = os.path.join(root, filename)
-            
             with open(xml_path, "rb") as f:
                 xml = f.read()
-
             try:
                 root_element = etree.fromstring(xml)
             except etree.XMLSyntaxError:
                 print(f"Erro ao ler arquivo {xml_path}")
                 continue
-
             root_element = etree.fromstring(xml)
 
             for item in root_element.xpath("//nfe:det", namespaces=ns):
@@ -84,7 +81,7 @@ for root, dirs, files in os.walk(folder_path):
 # Define o tamanho mínimo do arquivo em bytes
 min_file_size = 4 * 1024
 
-# Itera sobre todos os arquivos Excel na pasta atual e exclui os arquivos com menos de 6KB
+# Itera sobre todos os arquivos Excel na pasta atual e exclui os arquivos com menos de 4KB
 for filename in os.listdir(folder_path):
     if filename.endswith(".xlsx"):
         file_path = os.path.join(folder_path, filename)
@@ -93,11 +90,9 @@ for filename in os.listdir(folder_path):
             os.remove(file_path)
             print(f"Arquivo {filename} excluído por ser menor que 6KB")
 
-            
-   
-    # Imprime o número total de notas fiscais processadas na pasta atual
     print(f"Todas as notas fiscais foram processadas na pasta {folder_name}")
 
+# Exibe o tempo total de execução em segundos e minutos
 tempo_final = time.time()
 tempo_total = tempo_final - tempo_inicial
 tempo_total_min = tempo_total / 60

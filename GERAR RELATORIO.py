@@ -8,7 +8,6 @@ root = tk.Tk()
 root.withdraw()
 diretorio = filedialog.askdirectory()
 coluna = 1
-
 dados = []
 
 # Iterar sobre todos os arquivos CSV nas pastas
@@ -35,7 +34,7 @@ for pasta, subpastas, arquivos in os.walk(diretorio):
 
 df = pd.DataFrame(dados, columns=["pasta", "Arquivo", "Últimas informações"])
 
-# Salvar o DataFrame em uma planilha do Excel
+# Salvar o DataFrame em uma planilha fixa do Excel
 caminho_excel = r"E:\PROJETO\relatorio.xlsx"  # Substitua pelo caminho correto para o arquivo do Excel
 df.to_excel(caminho_excel, index=False)
 

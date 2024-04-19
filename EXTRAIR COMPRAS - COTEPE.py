@@ -20,8 +20,10 @@ ns = {
 # Define o nome das colunas da planilha
 columns = ["COMBUSTIVEL", "DATA", "NOTA", "ITEM", "CODIGO", "PREÇO", "%", "QUANTIDADE", "ANO", "MES", "DIA", "PERIODO", "UF"]
 
-# Itera sobre todas as pastas e subpastas no diretório especificado
+# Pergunta CNPJ do posto
 cnpj_posto = simpledialog.askstring("CNPJ", "ESPECIFIQUE O CNPJ DO POSTO")
+
+# Itera sobre todas as pastas e subpastas no diretório especificado
 for root, dirs, files in os.walk(folder_path):
     # Cria uma nova planilha do Excel e adiciona os cabeçalhos das colunas
     wb = Workbook()

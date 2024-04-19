@@ -5,7 +5,6 @@ from lxml import etree
 from openpyxl import Workbook
 from tkinter import simpledialog
 
-
 # Cria a janela do tkinter e a esconde
 root = tk.Tk()
 root.withdraw()
@@ -17,13 +16,16 @@ ns = {
     "nfe": "http://www.portalfiscal.inf.br/nfe"
 }
 
+# Lista de palavras de exclusão da extração
 keywords = ["CANCELADA", "CANCELADO", "CANCEL"]
 
 # Define o nome das colunas da planilha
 columns = ["COMBUSTIVEL", "DATA", "NOTA", "ITEM", "CODIGO", "PREÇO", "%", "QUANTIDADE", "Brest", "ICMSrest", "Bdest", "ICMSdest", "Bc", "ICMS", "BCST", "texto"]
 
-# Itera sobre todas as pastas e subpastas no diretório especificado
+# Pergunta o CNPJ do posto
 cnpj_posto = simpledialog.askstring("CNPJ", "ESPECIFIQUE O CNPJ DO POSTO")
+
+# Itera sobre todas as pastas e subpastas no diretório especificado
 for root, dirs, files in os.walk(folder_path):
     # Cria uma nova planilha do Excel e adiciona os cabeçalhos das colunas
     wb = Workbook()
