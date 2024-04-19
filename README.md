@@ -86,7 +86,7 @@ Extrai os dados de compras dos XMLs de compras dos postos de combustiveis especi
             01                          ---Mês
                 .xml                        ---XML de venda (NÃO SERÁ USADO)
         2019
-        COMPRAS                     ---Pasta que contem todas compras dos anos  **DIRETORIO A SER ESPECIFICADO NO SCRIPT**
+        COMPRAS                     ---Pasta que contem todas compras dos anos  (DIRETORIO A SER ESPECIFICADO NO SCRIPT)
             COMPRA 2018                 ---Todas compras do ano(os XMLs que será extraido as informações deverá estar nestas pastas)
                 .xml                        ---XML de COMPRA
                 .xml
