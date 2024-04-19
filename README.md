@@ -101,3 +101,11 @@ Especifica o diretorio dos postos.
 Itera em todos os CSVs.
 Extrai apenas os dados nescessarios para o relatorio.
 Salva os dados em uma planilha fixa.
+
+
+5 - ABRIR PLANILHAS
+Abre todas as planilhas .xlsx de um diretorio especificado.
+
+Especifica o diretorio.
+Itera todos os arquivos do diretorio.
+Se for uma planilha .xlsx e não for uma planilha de compra, Abre.

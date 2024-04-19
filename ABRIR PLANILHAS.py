@@ -6,10 +6,11 @@ from tkinter import filedialog
 root = tk.Tk()
 root.withdraw()
 
+# Especifica o diretorio das planilhas
 diretorio = filedialog.askdirectory()
 
 for arquivo in os.listdir(diretorio):
-    if arquivo.endswith(".csv"):
+    if arquivo.endswith(".xlsx"):
         if "COMPRA" not in arquivo:
             caminho_arquivo = os.path.join(diretorio, arquivo)
             try:
